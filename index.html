@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rock, Paper, Scissors!</title>
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Irish+Grover&family=Micro+5&display=swap" rel="stylesheet" />
+    <!-- styles -->
+    <link rel="stylesheet" href="/src/style.css" />
+    <!-- javascript -->
+    <script defer src="./src/main.js"></script>
+  </head>
+  <body>
+    <main>
+      <!-- game title -->
+      <div class="block text-center bg-slate-100 pt-12">
+        <p class="text-slate-600">Let's Play</p>
+        <h1 class="font-[Irish_Grover] text-4xl md:text-5xl lg:text-6xl">
+          <strong>
+            <span class="text-orange-600">Rock,</span>
+            <span class="text-yellow-500">Paper,</span>
+            <span class="text-blue-800">Scissors!</span>
+          </strong>
+        </h1>
+      </div>
+
+      <!-- GAME RESULTS -->
+      <!-- 
+      this is where the results are displayed
+      show which hand the player and computer choose
+      show who wins through text feedback in the middle
+      show score tally for both player and computer
+      -->
+      <div class="flex justify-center items-center mt-24 gap-4">
+        <!-- player -->
+        <div class="block text-center w-[30vw] max-w-[400px]">
+          <h3 class="text-xl text-slate-600">Player (You)</h3>
+          <img
+            id="playerImageDisplay"
+            src="src\assets\rock.png"
+            alt="Player's choice"
+            class="rotate-90 animate-wiggle" />
+          <p id="playerScoreDisplay" class="text-3xl text-emerald-600">Score: -</p>
+        </div>
+        <div class="flex justify-center items-center w-[140px] bg-slate-200 rounded-full border border-slate-300">
+          <p id="resultDisplay" class="text-2xl text-slate-600 py-2">VS</p>
+        </div>
+        <!-- computer -->
+        <div class="block text-center w-[30vw] max-w-[400px]">
+          <h3 class="text-xl text-slate-600">Computer (AI)</h3>
+          <img
+            id="computerImageDisplay"
+            src="src\assets\rock.png"
+            alt="Computer's choice"
+            class="-scale-x-100 -rotate-90 animate-wiggle" />
+          <p id="computerScoreDisplay" class="text-3xl text-rose-600">Score: -</p>
+        </div>
+      </div>
+      <!-- ? How can we animate the images -->
+
+      <!-- GAME ACTIONS -->
+      <!-- 
+      this is where the game actions are displayed
+      the player can choose between rock, paper, and scissors
+      -->
+      <p class="text-2xl text-center mb-4 mt-8">Choose your move:</p>
+      <div id="choices" class="flex justify-center items-center gap-4">
+        <!-- rock -->
+        <div>
+          <button
+            onclick="playGame('rock')"
+            class="flex justify-center items-center overflow-hidden w-20 h-auto md:w-24 lg:w-32 hover:scale-110 ease-in-out duration-200 bg-slate-200 hover:bg-orange-600 border border-slate-300 rounded-full cursor-pointer">
+            <img src="src\assets\rock.png" alt="Rock" class="max-w-full max-h-full p-2 grayscale hover:grayscale-0" />
+          </button>
+          <p class="text-center text-lg md:text-xl lg:text-2xl text-slate-600 mt-1">Rock</p>
+        </div>
+        <!-- paper -->
+        <div>
+          <button
+            onclick="playGame('paper')"
+            class="flex justify-center items-center overflow-hidden w-20 h-auto md:w-24 lg:w-32 hover:scale-110 ease-in-out duration-200 bg-slate-200 hover:bg-yellow-500 border border-slate-300 rounded-full cursor-pointer">
+            <img src="src\assets\paper.png" alt="Paper" class="max-w-full max-h-full p-2 grayscale hover:grayscale-0" />
+          </button>
+          <p class="text-center text-lg md:text-xl lg:text-2xl text-slate-600 mt-1">Paper</p>
+        </div>
+        <!-- scissors -->
+        <div>
+          <button
+            onclick="playGame('scissors')"
+            class="flex justify-center items-center overflow-hidden w-20 h-auto md:w-24 lg:w-32 hover:scale-110 ease-in-out duration-200 bg-slate-200 hover:bg-blue-800 border border-slate-300 rounded-full cursor-pointer">
+            <img
+              src="src\assets\scissors.png"
+              alt="Scissors"
+              class="max-w-full max-h-full p-2 grayscale hover:grayscale-0" />
+          </button>
+          <p class="text-center text-lg md:text-xl lg:text-2xl text-slate-600 mt-1">Scissors</p>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
